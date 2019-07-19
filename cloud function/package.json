@@ -1,0 +1,14 @@
+{
+  "name": "attandence",
+  "description": "Find out your timetable!",
+  "version": "0.0.1",
+  "author": "Aniruddh Parwal and Pradhyum Vyas",
+  "engines": {
+    "node": "8"
+  },
+  "dependencies": {
+    "actions-on-google": "^2.0.0",
+    "firebase-admin": "^4.2.1",
+    "firebase-functions": "1.0.0"
+  }
+}
