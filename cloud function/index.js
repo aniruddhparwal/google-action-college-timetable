@@ -299,4 +299,40 @@ app.intent('upcomingLecture', (conv) => {
   //conv.close('This feature is under Development');
 
 });
+
+app.intent('lunchCall', (conv) => {
+  setTime();
+  
+  if(currentDay == 6)
+  {
+    conv.add("Bhai Kabhi bhi Khale ... Pura Din tera he hai");    
+  }
+  else if(currentDay > 0  && currentDay < 6)
+  {
+    if(compareTime >= 0 && compareTime < 900)
+    {
+      conv.add("Bhai College Chalu toh Hone De...");
+    }
+    else if (compareTime >= 900 && compareTime < 1140)
+    {
+      //LunchTime Code
+      compareTime = currentHour*60 + currentMin;
+  	  remainingTime = 700 - compareTime;
+      remainingHour = Math.trunc(remainingTime/60);
+      remainingMin =  remainingTime%60;
+      conv.add("Wait a little..."+remainingHour+' hour and '+remainingMin+" Minutes Left"); 
+    }
+    else if (compareTime >= 1240 && compareTime < 1600)
+    {
+      conv.add("Fresh Food is waiting at Home.... Get it after reaching home"); 
+    }
+    else
+    {
+      conv.add("College me milenge");
+    }
+  }
+  else{
+    conv.add("Today is Sunday Enjoy food every Minute"); 
+  }  
+});
 exports.attandence = functions.https.onRequest(app);
