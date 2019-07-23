@@ -204,16 +204,17 @@ function setTime() {
     currentLecture = 2;
     currentSubject = timeTable[currentDay - 1].lecture2.subject;
     currentFaculty = timeTable[currentDay - 1].lecture2.faculty;
-    upcomingSubject = "Lunch";
-    upcomingFaculty = "Canteen";
+    upcomingSubject = timeTable[currentDay - 1].lecture3.subject;
+    upcomingFaculty = timeTable[currentDay - 1].lecture3.faculty;
   }
 
   if (compareTime >= 1050 && compareTime < 1140) {
     currentLecture = 3;
     currentSubject = timeTable[currentDay - 1].lecture3.subject;
     currentFaculty = timeTable[currentDay - 1].lecture3.faculty;
-    upcomingSubject = timeTable[currentDay - 1].lecture2.subject;
-    upcomingFaculty = timeTable[currentDay - 1].lecture2.faculty;
+    upcomingSubject = "Lunch";
+    upcomingFaculty = "Canteen";
+
   }
 
   if (compareTime >= 1140 && compareTime < 1240) {
